@@ -1,0 +1,49 @@
+<section>
+    <form class="p-3 w-75 mx-auto " [formGroup]="chekout" (ngSubmit)=" handelform()">
+        <div class="row g-3">
+           
+            <div class="my-3">
+               <input type="text" class="form-control" formControlName="details" placeholder="details">
+               <div class="alert alert-danger mt-1 p-1 text-center" *ngIf="chekout.get('details')?.errors && (chekout.get('details')?.touched || chekout.get('details')?.value.length>0)">
+                <p class="m-0"  *ngIf="chekout.get('details')?.getError('required')">details is required</p>
+               </div>
+            </div>
+            <div class="my-3">
+               <input type="tel" class="form-control" formControlName="phone" placeholder="phone">
+               <div class="alert alert-danger mt-1 p-1 text-center" *ngIf="chekout.get('phone')?.errors && (chekout.get('phone')?.touched || chekout.get('phone')?.value.length>0)">
+                <p class="m-0"  *ngIf="chekout.get('phone')?.getError('required')">phone is required</p>
+               </div>
+            </div>
+            <div class="my-3">
+               <input type="text" class="form-control" formControlName="city" placeholder="city">
+               <div class="alert alert-danger mt-1 p-1 text-center" *ngIf="chekout.get('city')?.errors && (chekout.get('city')?.touched || chekout.get('city')?.value.length>0)">
+                <p class="m-0" *ngIf="chekout.get('city')?.getError('required')">city is required</p>
+               </div>
+            </div>
+            <button class="btn mt-3  my-5 w-100 " [disabled]="chekout.invalid"> pay now</button>
+            <div class="w-100 d-flex justify-content-center">
+
+           
+            </div>
+        </div>
+    </form>
+
+
+    <!-- <form [formGroup]="chekout" (ngSubmit)="handelform()" class="p-3 w-75 mx-auto">
+<div class="my-3">
+    <label for="details" class="ps-1 ">Details:</label>
+   <textarea id="details" class="form-control" formControlName="details" required></textarea>
+</div>
+
+<div class="my-3">
+    <label for="phone" class="ps-1">phone:</label>
+   <input class="form-control" formControlName="phone" type="tel" name="number" required>
+</div>
+<div class="my-3">
+    <label for="city"class="ps-1">city:</label>
+   <input required class="form-control" formControlName="city" type="text" name="city">
+</div>
+<button class="btn mt-3  my-5 w-100 "> pay now</button>
+    </form>  -->
+   
+</section>

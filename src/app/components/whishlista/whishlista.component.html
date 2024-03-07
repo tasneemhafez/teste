@@ -1,0 +1,17 @@
+
+<section class="w-75 mx-auto  bg-main-light mt-3 p-3 rounded-3 my-2">
+    <h1> My wish list</h1>
+    <div class="row border-bottom pb-2" *ngFor="let item of products">
+        <div class="col-md-2 my-3">
+            <img class="w-100" [src]="item.imageCover">
+        </div>
+        <div class="col-md-10">
+           <div class="d-flex justify-content-between align-content-center">
+            <div class="texttt">
+                <h3 class="h5">{{item.title}}</h3>
+                <p class="m-0 p-0 text-main"> {{item.price|currency:' EGP '}}</p>
+           <button (click)="removeCart(item._id)" class="text-danger border border-0 btn m-0 p-0"><i class="fa-solid fa-trash"></i> Remove</button> 
+        </div>
+            <div class="my-5 pt-5">
+                <button (click)="addToCart(item._id)"class="btn btn-lg  border-success " > Add to Cart</button></div>
+            </div></div></div></section>   

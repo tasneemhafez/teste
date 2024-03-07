@@ -1,0 +1,41 @@
+<section class="text">
+<p class="text-main h1 text-center pb-5">All Brands</p>
+<div class="row ms-5 g-4 p-4">
+  
+   <div class="col-md-3 text-center product ms-3  border" *ngFor="let item of brands">
+    <button (click)="getdetelis(item._id)" type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+      <img  class="w-100 img-fluid cursor-pointer" [src]="item.image" [alt]="item.name">
+            <p class="">{{item.name}}</p>
+            </button>
+            </div>
+            </div>
+            </section>
+
+
+<!-- Modal -->
+
+<section>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-2 w-100">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center border-1">
+      <div class="modal-body col-md-6 ps-5" *ngIf="brandname">
+        <p class="text-main fs-2 fw-bold ">{{ brandname }}</p>
+        <p class="ps-2">{{brandname}}</p>
+        </div>
+     <div class="col-md-6">
+        <img class="w-100" [src]="brandimge" />
+        </div>
+      </div>
+      <div class="modal-footer bg-white ">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      
+      </div>
+      </div>
+
+    </div>
+      </div> 
+    </section>

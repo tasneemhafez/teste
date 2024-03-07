@@ -1,0 +1,15 @@
+<section class="my-4 pt-2 p-5 m-2">
+    <div class="row p-5">
+        <div class="col-md-4 g-5 p-2 mt-1" *ngFor="let item of category">
+            <div class="crude border product ">
+            <div class="imge">
+                <img class="imge img-fluid ratio-4x3 object-fit-cover" [src]="item.image" [alt]="item.name" />
+            </div>
+            <div class="text">
+                <h3 class="text-main text-center">{{item.name}}</h3>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</section>

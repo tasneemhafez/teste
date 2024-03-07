@@ -1,0 +1,49 @@
+
+ <section class="mt-4 my-5 p-5 mx-auto w-75">
+
+  <div  *ngFor="let order of orders">
+ 
+      <div class=" mx-auto w-50 shadow bg-light my-3 p-4 rounded-3 ">
+       
+       <div id="shippingAdrress">
+           <p><span class="text-main">Sipping Address Data</span></p>
+           <p><span class="text-main">Phone :</span>{{order.shippingAddress.phone}}</p>
+           <p><span class="text-main">City :</span>{{order.shippingAddress.city}}</p>
+           <p><span class="text-main">Details :</span>{{order.shippingAddress.details}}</p>
+
+       </div>
+      </div> 
+     <div id="Orders" class="pt-5">
+       
+       <div class="bg-light p-5 shadow">
+       <div class="row  mb-3 pb-4" *ngFor="let cartItem of order.cartItems ">
+         <div class="d-flex justify-content-between align-items-center"> 
+          <p>Count:<span class="text-main"> {{cartItem.count}}</span></p>
+          <p class="text-main"><span>Price:</span> {{cartItem.price}}</p>
+         </div>
+ 
+    <div class="product row align-items-center">
+        <div class="col-md-2">
+            <img class="w-100" [src]="cartItem.product.imageCover" alt="">
+        </div>
+        <div class="col-md-5 ">
+            <h3 class="fa-1x">{{cartItem.product.title}}</h3>
+            <h4>{{cartItem.product.category.name}}</h4>
+            
+        </div>
+        <div class="col-md-5  ">
+           
+            <img class="imge  w-25" [src]="cartItem.product.brand.image" alt="">
+        </div>
+    </div>
+   </div>
+    </div>
+  <div class="bg-light mb-2 shadow py-1 w-100 text-center" ><p class="fa-2x">Totle Price:<span class="text-main">{{order.totalOrderPrice}}</span></p></div>
+  </div> 
+  <div (click)="naigatBaack()" class="mt-3 my-3" ><button class="btn btn-main mx-auto  w-100 ">go to home</button></div>
+      </div> 
+  
+      
+    </section>
+
+

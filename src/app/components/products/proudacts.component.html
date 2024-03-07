@@ -1,0 +1,36 @@
+<section class="p-5 my-5">
+    <div class="mt-2"><input type="text" class="form-control w-50 mx-auto mt-3 "placeholder="Search...."
+        [(ngModel)]="searchTaerm"/></div>
+
+    <div class="row g-1 p-2">
+        <div class="col-md-3 p-3"*ngFor="let item of products |search:searchTaerm">
+     
+            <div class="product p-2 cursor-pointer ">
+                <div>
+                <img  [routerLink]="['/details', item._id]" [src]="item.imageCover" class="w-100"  [alt]="item.title"/>
+                <h3 class="h6 text-main">{{item.category.name}}</h3>
+                <h4 class="h6">{{item.title.split(' ').slice(0,2).join('')}}</h4>
+                <div class="d-flex align-items-center justify-content-between position-relative">
+                    <span>{{item.price}} EGP</span>
+                    <div>
+                        <span class="text-muted mt-5">{{item.ratingsAverage}}</span>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+           
+
+                    </div>
+                   
+         <button *ngIf="!whisdata.includes(item._id)" (click)="addlist(item._id)"class=" heart position-absolute border-0 border btn" >  <i class="fa-solid fa-heart fa-2x"></i></button>
+         <button *ngIf="whisdata.includes(item._id)" (click)="removewhishlist(item._id)"class=" heart position-absolute border-0 border btn" ><i class="fa-solid fa-heart fa-2x" style="color: #d71414;"></i> </button>
+        
+        </div>
+           
+         
+        </div>
+     
+<button (click)="addToCart(item._id)"  class="btn-main w-100 mt-5">Add proudct</button> 
+            </div>
+
+        </div>
+    </div>
+</section>
+
